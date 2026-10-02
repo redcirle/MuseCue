@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="../">
+  <title>MuseCue | 텔레프롬프터</title>
+  
+  <link rel="canonical" href="https://musecue.vip/ko/">
+  <link rel="alternate" hreflang="en" href="https://musecue.vip/">
+  <link rel="alternate" hreflang="ja" href="https://musecue.vip/ja/">
+  <link rel="alternate" hreflang="ko" href="https://musecue.vip/ko/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://musecue.vip/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://musecue.vip/zh-hant/">
+  <link rel="alternate" hreflang="x-default" href="https://musecue.vip/">
+  <meta name="description" content="MuseCue 텔레프롬프터의 테마 배경과 애니메이션 효과를 만나보세요. 오로라, 별빛 하늘, 첫눈 등의 테마를 살펴볼 수 있습니다.">
+  <meta name="keywords" content="MuseCue, 小丑猫提词板, 小丑貓提詞板, 小丑猫プロンプター, 뮤즈큐, teleprompter, テレプロンプター, 텔레프롬프터">
+  <meta property="og:title" content="MuseCue | 텔레프롬프터">
+  <meta property="og:description" content="MuseCue 텔레프롬프터의 테마 배경과 애니메이션 효과를 만나보세요. 오로라, 별빛 하늘, 첫눈 등의 테마를 살펴볼 수 있습니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://musecue.vip/ko/">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:image" content="https://musecue.vip/images/slide_prompter_app.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MuseCue","alternateName":["小丑猫提词板","小丑貓提詞板","小丑猫プロンプター","뮤즈큐"],"applicationCategory":"UtilitiesApplication","operatingSystem":"iOS","description":"A teleprompter with themed wallpapers and animated effects."}</script>
+
+  <link rel="stylesheet" href="style.css?v=38" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <div style="display: flex; flex-direction: column; min-height: 100vh; width: 100%;">
+    <div class="language-control">
+      <label for="language-select" class="sr-only">Language / 语言 / 言語 / 언어</label>
+      <select id="language-select" aria-label="Language / 语言 / 言語 / 언어">
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文</option>
+      </select>
+    </div>
+    
+    <div class="logo">
+      <img src="images/logo.png" alt="LOGO图" />
+    </div>
+
+    <div class="tagline" id="tagline" data-full-text="This Cue, Made out of a wild thought, arrives for you." aria-label="This Cue, Made out of a wild thought, arrives for you."><span id="tagline-text" aria-hidden="true"></span></div>
+    <h1 class="sr-only">MuseCue 텔레프롬프터</h1>
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide prompter-app-slide">
+          <a href="#" id="app-store-link" class="prompter-app-card" aria-label="MuseCue App Store">
+            <img src="images/slide_prompter_app.png" alt="MuseCue 小丑猫提词板 promotional card" />
+            <span class="app-name-sequence" aria-hidden="true">
+              <span class="app-name app-name-musecue" lang="en">MuseCue</span>
+              <span class="app-name" lang="zh-Hans">小丑猫提词板</span>
+              <span class="app-name" lang="zh-Hant">小丑貓提詞板</span>
+              <span class="app-name" lang="ja">小丑猫プロンプター</span>
+              <span class="app-name app-name-musecue" lang="ko">MuseCue</span>
+            </span>
+          </a>
+        </div>
+        <div class="swiper-slide plum-lightning-slide" aria-label="Plum and Violet Lightning">
+          <div class="plum-lightning-card" id="plumLightningCard">
+            <canvas id="plumLightningCanvas" aria-hidden="true"></canvas>
+            <div class="plum-lightning-vignette" aria-hidden="true"></div>
+            <div class="plum-lightning-copy">MuseCue</div>
+          </div>
+        </div>
+        <div class="swiper-slide theme-slide"><div class="theme-card theme-mountain" data-effect="snow"><canvas class="theme-canvas" aria-hidden="true"></canvas><canvas class="particle-canvas" aria-hidden="true"></canvas><div class="theme-copy"><span class="theme-name" data-theme="mountain"></span><span class="theme-name alternate" data-theme="snow"></span></div></div></div>
+        <div class="swiper-slide theme-slide"><div class="theme-card theme-aurora" data-effect="rain"><canvas class="theme-canvas" aria-hidden="true"></canvas><canvas class="particle-canvas" aria-hidden="true"></canvas><div class="theme-copy"><span class="theme-name" data-theme="aurora"></span><span class="theme-name alternate" data-theme="rain"></span></div></div></div>
+        <div class="swiper-slide theme-slide"><div class="theme-card theme-sunset" data-effect="stars"><canvas class="theme-canvas" aria-hidden="true"></canvas><canvas class="particle-canvas" aria-hidden="true"></canvas><div class="theme-copy"><span class="theme-name" data-theme="sunset"></span><span class="theme-name alternate" data-theme="stars"></span></div></div></div>
+        <div class="swiper-slide theme-slide"><div class="theme-card theme-celebrity" data-effect="hearts"><canvas class="theme-canvas" aria-hidden="true"></canvas><canvas class="particle-canvas" aria-hidden="true"></canvas><div class="theme-copy"><span class="theme-name" data-theme="celebrity"></span><span class="theme-name alternate" data-theme="hearts"></span></div></div></div>
+        <div class="swiper-slide theme-slide"><div class="theme-card theme-time" data-effect="snow"><canvas class="theme-canvas" aria-hidden="true"></canvas><canvas class="particle-canvas" aria-hidden="true"></canvas><div class="theme-copy"><span class="theme-name" data-theme="time"></span><span class="theme-name alternate" data-theme="snow"></span></div></div></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="footer-button-group">
+      <div class="footer-shortcut-card">
+        <a href="https://www.tiktok.com/@musecue" target="_blank" rel="noopener noreferrer" class="footer-button tiktok-button">TikTok</a>
+        <a href="https://www.youtube.com/@MuseCue-App" target="_blank" rel="noopener noreferrer" class="footer-button youtube-button">YouTube</a>
+      </div>
+      <div class="footer-shortcut-card">
+        <a href="mailto:hello@joker.red" class="footer-button purple-striped-button">hello@joker.red</a>
+        <a href="https://weibo.com/u/7999616775" target="_blank" rel="noopener noreferrer" class="footer-button weibo-button" data-i18n="weibo">Weibo</a>
+      </div>
+      <div class="footer-shortcut-card">
+        <button type="button" id="resonance-button" class="footer-button resonance-button" >This Cue</button>
+        <audio id="tagline-audio" src="audio/tagline.wav"></audio>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js?v=40"></script>
+</body>
+</html>
