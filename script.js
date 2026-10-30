@@ -1,9 +1,9 @@
 const translations = {
-  en: { app: "MuseCue", aurora: "Aurora", sunset: "Before Sunset", plum: "Plum", lightning: "Violet Lightning", mountain: "Emperor’s Landing", snow: "First Snow at World's End", trails: "Star Trails", stars: "Starfield", waves: "Ocean Waves", rain: "Night Rain", celebrity: "Star Girl", hearts: "Floating Hearts", time: "The Chill of Time", custom: "Your PNG card", weibo: "Weibo", sound: "Hear MuseCue" },
-  ja: { app: "小丑猫プロンプター", aurora: "オーロラ", sunset: "日没前", plum: "プラム", lightning: "紫電", mountain: "千里江山", snow: "天果ての初雪", trails: "星の軌跡", stars: "星空", waves: "海の波", rain: "夜の雨", celebrity: "女性スター", hearts: "漂うハート", time: "時の寒さ", custom: "あなたのPNGカード", weibo: "微博", sound: "MuseCueを聴く" },
-  ko: { app: "MuseCue", aurora: "오로라", sunset: "해지기 전", plum: "플럼", lightning: "보라빛 번개", mountain: "천리강산", snow: "세상 끝의 첫눈", trails: "별 궤적", stars: "별빛 하늘", waves: "파도", rain: "밤비", celebrity: "스타 걸", hearts: "하트 플로트", time: "시간의 추위", custom: "나만의 PNG 카드", weibo: "웨이보", sound: "MuseCue 듣기" },
-  "zh-Hans": { app: "小丑猫提词板", aurora: "极光", sunset: "日落之前", plum: "李子", lightning: "紫电", mountain: "千里江山", snow: "天涯初雪", trails: "星轨", stars: "星空", waves: "海浪", rain: "夜雨", celebrity: "女明星", hearts: "飘爱心", time: "时间之寒", custom: "自定义 PNG 卡片", weibo: "微博主页", sound: "聆听 MuseCue" },
-  "zh-Hant": { app: "小丑貓提詞板", aurora: "極光", sunset: "日落之前", plum: "李子", lightning: "紫電", mountain: "千里江山", snow: "天涯初雪", trails: "星軌", stars: "星空", waves: "海浪", rain: "夜雨", celebrity: "女明星", hearts: "飄愛心", time: "時間之寒", custom: "自訂 PNG 卡片", weibo: "微博主頁", sound: "聆聽 MuseCue" }
+  en: { app: "MuseCue", aurora: "Aurora", sunset: "Before Sunset", plum: "Plum", lightning: "Violet Lightning", mountain: "Emperor’s Landing", snow: "First Snow at World's End", trails: "Star Trails", stars: "Starfield", waves: "Ocean Waves", rain: "Night Rain", celebrity: "Star Girl", hearts: "Floating Hearts", time: "The Chill of Time", halloween: "Halloween 2026", custom: "Your PNG card", weibo: "Weibo", sound: "Hear MuseCue" },
+  ja: { app: "小丑猫プロンプター", aurora: "オーロラ", sunset: "日没前", plum: "プラム", lightning: "紫電", mountain: "千里江山", snow: "天果ての初雪", trails: "星の軌跡", stars: "星空", waves: "海の波", rain: "夜の雨", celebrity: "女性スター", hearts: "漂うハート", time: "時の寒さ", halloween: "2026 ハロウィン", custom: "あなたのPNGカード", weibo: "微博", sound: "MuseCueを聴く" },
+  ko: { app: "MuseCue", aurora: "오로라", sunset: "해지기 전", plum: "플럼", lightning: "보라빛 번개", mountain: "천리강산", snow: "세상 끝의 첫눈", trails: "별 궤적", stars: "별빛 하늘", waves: "파도", rain: "밤비", celebrity: "스타 걸", hearts: "하트 플로트", time: "시간의 추위", halloween: "2026 할로윈", custom: "나만의 PNG 카드", weibo: "웨이보", sound: "MuseCue 듣기" },
+  "zh-Hans": { app: "小丑猫提词板", aurora: "极光", sunset: "日落之前", plum: "李子", lightning: "紫电", mountain: "千里江山", snow: "天涯初雪", trails: "星轨", stars: "星空", waves: "海浪", rain: "夜雨", celebrity: "女明星", hearts: "飘爱心", time: "时间之寒", halloween: "2026 万圣节", custom: "自定义 PNG 卡片", weibo: "微博主页", sound: "聆听 MuseCue" },
+  "zh-Hant": { app: "小丑貓提詞板", aurora: "極光", sunset: "日落之前", plum: "李子", lightning: "紫電", mountain: "千里江山", snow: "天涯初雪", trails: "星軌", stars: "星空", waves: "海浪", rain: "夜雨", celebrity: "女明星", hearts: "飄愛心", time: "時間之寒", halloween: "2026 萬聖節", custom: "自訂 PNG 卡片", weibo: "微博主頁", sound: "聆聽 MuseCue" }
 };
 function getLocale() {
   const params = new URLSearchParams(location.search);
@@ -30,6 +30,7 @@ function applyLocale(nextLocale) {
   document.querySelectorAll("[data-theme]").forEach(el => { el.textContent = copy[el.dataset.theme]; });
   document.querySelectorAll("[data-i18n]").forEach(el => { if (el.dataset.i18n !== "custom") el.textContent = copy[el.dataset.i18n]; });
   document.querySelector(".prompter-app-card").setAttribute("aria-label", copy.app);
+  document.getElementById("halloween-card").setAttribute("aria-label", copy.halloween);
 }
 applyLocale(locale);
 document.getElementById("language-select").addEventListener("change", event => {
